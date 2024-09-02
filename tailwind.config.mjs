@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import colors from 'tailwindcss/colors';
+import colors from "tailwindcss/colors";
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
@@ -14,7 +14,11 @@ export default {
       white: "#ffffff",
       gray: colors.gray,
       indigo: colors.indigo,
-      neutral: colors.neutral,  // Used mainly for text color
+      neutral: colors.neutral, // Used mainly for text color
+      green: {
+        50: "#EEF2F1",
+        500: "#0C3B2E",
+      }, // restflow
       yellow: {
         50: "#fefce8",
         100: "#fef9c3",
@@ -29,10 +33,15 @@ export default {
         500: "#e14d0b",
         600: "#ea580c",
       }, // Primary colors, used mainly for links, buttons and svg icons
+
       red: colors.red, // Used for bookmark icon
       zinc: colors.zinc, // Used mainly for box-shadow
     },
-    extend: {},
+    extend: {
+      dropShadow: {
+        navbar: "0 0 8px 0 rgba(0, 0, 0, 0.25)",
+      },
+    },
   },
   plugins: [
     require("tailwindcss/nesting"),
