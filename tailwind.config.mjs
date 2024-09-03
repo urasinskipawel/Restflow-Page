@@ -17,7 +17,10 @@ export default {
       neutral: colors.neutral, // Used mainly for text color
       green: {
         50: "#EEF2F1",
+        100: "#6D9773",
+        400: '#0C3B2ED9',
         500: "#0C3B2E",
+        
       }, // restflow
       yellow: {
         50: "#fefce8",
@@ -32,6 +35,9 @@ export default {
         400: "#fa5a15",
         500: "#e14d0b",
         600: "#ea580c",
+      },
+      grayText: {
+        100: "#DBE2E0",
       }, // Primary colors, used mainly for links, buttons and svg icons
 
       red: colors.red, // Used for bookmark icon
@@ -41,6 +47,13 @@ export default {
       dropShadow: {
         navbar: "0 0 8px 0 rgba(0, 0, 0, 0.25)",
       },
+      fontFamily: {
+        inder: ["Inder", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+      },
+      backgroundImage: {
+        'hero-pattern': "url('./src/images/background.svg')",
+      }
     },
   },
   plugins: [
