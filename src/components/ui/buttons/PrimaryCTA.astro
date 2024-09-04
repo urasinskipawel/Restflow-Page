@@ -1,21 +1,17 @@
 ---
-
-const { title, url} = Astro.props;
+const { title, url } = Astro.props;
 // Define TypeScript interface for the properties
 interface Props {
   title?: string;
   url?: string;
-
 }
-
 ---
 
 <!-- Link styled as a button, with dynamic title, URL, and optional arrow -->
 <a
-  class={`flex items-center justify-center w-full rounded-md py-4 text-green-500 font-inder transition duration-300 border border-transparent bg-green-50 2xl:text-base`}
+  class={`flex items-center justify-center w-full rounded-md py-4 text-green-500 font-inder transition duration-300 border-transparent bg-green-50`}
   href={url}
 >
   {title}
   <!-- Display the arrow based on the 'noArrow' property -->
-
 </a>

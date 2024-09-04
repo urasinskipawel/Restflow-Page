@@ -1,25 +1,35 @@
 ---
+import PrimaryCTA from "@/components/ui/buttons/PrimaryCTA.astro";
+
 // Define props from Astro
-const { title, subTitle } = Astro.props;
+const { title, subTitle, subTitleStyle, primaryBtn, primaryBtnURL } =
+  Astro.props;
 
 // Define TypeScript interface for props
 interface Props {
   title: string;
   subTitle: string;
+  subTitleStyle: string;
+  primaryBtn?: string;
+  primaryBtnURL?: string;
 }
 ---
 
-<section
-  class="w-full flex justify-center gap-4 px-3 pt-8 pb-4 bg-green-500"
->
+<section class="w-full flex justify-center gap-4 px-3 pt-8 pb-4 bg-green-500">
   <!-- Title and description -->
- <div class='flex flex-col'>
-    <h1 class="flex text-balance font-oswald text-4xl">
+  <div class="flex flex-col">
+    <h1 class="flex pr-6 font-oswald text-4xl">
       {title}
     </h1>
-    <p class="font-inder text-xl pr-6 mt-6">
+    <p class=`font-inder mt-6 leading-6 ${subTitleStyle}`>
       {subTitle}
     </p>
-  
-    </div>
+    {
+      primaryBtn && primaryBtnURL ? (
+        <div class="flex mt-4 justify-center">
+          <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
+        </div>
+      ) : null
+    }
+  </div>
 </section>

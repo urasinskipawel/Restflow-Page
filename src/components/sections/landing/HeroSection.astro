@@ -6,13 +6,7 @@ import BrandLogoHero from "@/components/BrandLogoHero.astro";
 import BottomArrow from "@/components/BottomArrow.astro";
 
 // Define props from Astro
-const {
-  title,
-  primaryBtn,
-  primaryBtnURL,
-  src,
-  alt
-} = Astro.props;
+const { title, primaryBtn, primaryBtnURL, src, alt } = Astro.props;
 
 // Define TypeScript interface for props
 interface Props {
@@ -24,49 +18,47 @@ interface Props {
 }
 ---
 
-
 <!-- Defining a grid container that holds all the content -->
-<section
- class="w-full flex justify-center gap-4 px-3 pt-14 pb-6 bg-green-400"
->
+<section class="w-full flex justify-center gap-4 px-3 pt-14 pb-6 bg-green-400">
   <!-- Title and description -->
   <div>
     <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
-     <div class="pr-5">
-    <h1
-      class="flex text-balance font-oswald text-4xl"
-    >
-      <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
-      <Fragment set:html={title} />
-    </h1>
-  </div>
-    <BrandLogoHero/>
-  <div class='px-6 mt-6'>
-    <ul class="list-disc px-2 text-white text-xl">
-      <li>Kontroluj swoje zaopatrzenie</li>
-      <li>Oszczędzaj czas, pieniądze i nerwy</li>
-      <li>Nigdy nie przegap najniższych cen u swoich dostawców</li>
-    </ul>
-  </div>
+    <div class="pr-5">
+      <h1 class="flex text-balance font-oswald text-4xl">
+        <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
+        <Fragment set:html={title} />
+      </h1>
+    </div>
+    <BrandLogoHero />
+    <div class="px-6 mt-6">
+      <ul class="list-disc px-2 text-white text-xl">
+        <li>Kontroluj swoje zaopatrzenie</li>
+        <li>Oszczędzaj czas, pieniądze i nerwy</li>
+        <li>Nigdy nie przegap najniższych cen u swoich dostawców</li>
+      </ul>
+    </div>
     <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
     <div class="my-11 flex justify-center border-none">
-     <PrimaryCTA title={primaryBtn} url={primaryBtnURL}  />
+      <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
     </div>
-  <!-- Hero Image Section -->
-  <div class="flex w-full mb-8">
-    {alt && src && (  
-      <Image
-      src={src}
-      alt={alt}
-      class="h-full w-full scale-100 object-cover object-center"
-      draggable={"false"}
-      loading={"eager"}
-      format={"png"} 
-      />
-      )}
-  </div>
-  <p class="flex justify-center">Zjedź w dół, żeby dowiedzieć się więcej</p>
-  <div class='flex justify-center mt-2'>  
-    <BottomArrow/>
+    <!-- Hero Image Section -->
+    <div class="flex w-full mb-8">
+      {
+        alt && src && (
+          <Image
+            src={src}
+            alt={alt}
+            class="h-full w-full scale-100 object-cover object-center"
+            draggable={"false"}
+            loading={"eager"}
+            format={"png"}
+          />
+        )
+      }
+    </div>
+    <p class="flex justify-center">Zjedź w dół, żeby dowiedzieć się więcej</p>
+    <div class="flex justify-center mt-2">
+      <BottomArrow />
+    </div>
   </div>
 </section>
