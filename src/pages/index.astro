@@ -17,6 +17,7 @@ import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
+import ContactSection from "@/components/sections/landing/ContactSection.astro";
 ---
 
 <MainLayout>
@@ -40,6 +41,12 @@ import dashboard from "@images/dashboard-image.avif";
     subTitleStyle=`pr-4 text-xs`
     primaryBtn="Zamawiam konsultację"
     primaryBtnURL="/products"
+  />
+
+  <ContactSection
+    titleSmall="Nie podjąłeś jeszcze decyzji?"
+    titleBig="Po prostu skontaktuj się z nami"
+    subTitle="Jeśli posiadasz dodatkowe pytania lub chcesz rozwiać swoje wątpliwości skontaktuj się z nami, a z chęcią pomożemy."
   />
 
   <FeaturesGeneral
