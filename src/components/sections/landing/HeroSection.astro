@@ -4,8 +4,6 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import BrandLogoHero from "@/components/BrandLogoHero.astro";
 import BottomArrow from "@/components/BottomArrow.astro";
-import backgroundHero from '../../../images/background.svg'
-
 
 // Define props from Astro
 const {
@@ -29,14 +27,14 @@ interface Props {
 
 <!-- Defining a grid container that holds all the content -->
 <section
- class="w-full flex justify-center gap-4 px-3 pt-14 pb-6 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 bg-green-400"
+ class="w-full flex justify-center gap-4 px-3 pt-14 pb-6 bg-green-400"
 >
   <!-- Title and description -->
   <div>
     <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
      <div class="pr-5">
     <h1
-      class="block text-balance font-oswald text-4xl sm:text-4xl lg:text-6xl lg:leading-tight"
+      class="flex text-balance font-oswald text-4xl"
     >
       <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
       <Fragment set:html={title} />
@@ -50,7 +48,6 @@ interface Props {
       <li>Nigdy nie przegap najniższych cen u swoich dostawców</li>
     </ul>
   </div>
-   
     <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
     <div class="my-11 flex justify-center border-none">
      <PrimaryCTA title={primaryBtn} url={primaryBtnURL}  />
@@ -72,5 +69,4 @@ interface Props {
   <div class='flex justify-center mt-2'>  
     <BottomArrow/>
   </div>
-
 </section>
