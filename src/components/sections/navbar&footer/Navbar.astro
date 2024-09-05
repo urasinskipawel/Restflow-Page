@@ -1,15 +1,14 @@
 ---
 //Import relevant dependencies
-import ThemeIcon from "@components/ThemeIcon.astro";
-import NavLink from "@components/ui/links/NavLink.astro";
-import Authentication from "../misc/Authentication.astro";
-import enStrings from "@utils/navigation.ts";
-import frStrings from "@utils/fr/navigation.ts";
-import BrandLogo from "@components/BrandLogo.astro";
+import NavigationLinks from "@/components/ui/links/NavigationLinks.astro";
+import { navigationData } from "@utils/navigation.ts";
+import NavLogo from "@/components/NavLogo.astro";
+import HamburgerBtn from "@/components/ui/buttons/HamburgerBtn.astro";
 
-// Select the correct translation based on the page's lang prop:
-const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
-const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
+interface navBarLinks {
+  name: string;
+  url: string;
+}
 ---
 
 <!-- Main header component -->
@@ -25,186 +24,34 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
       <!-- Brand logo -->
       <a
         class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
-        href={'/'}
+        href={"/"}
         aria-label="Brand"
       >
-        <BrandLogo />
+        <NavLogo />
       </a>
       <!-- Collapse toggle for smaller screens -->
-      <div class="ml-auto md:hidden">
-        <button
-          type="button"
-          class="hs-collapse-toggle flex h-12 w-12 items-center justify-center rounded-full text-sm font-bold text-neutral-600 transition duration-300 hover:bg-neutral-200 disabled:pointer-events-none disabled:opacity-50 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:outline-none"
-          data-hs-collapse="#navbar-collapse-with-animation"
-          aria-controls="navbar-collapse-with-animation"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            class="h-[3rem] w-[3rem] flex-shrink-0 hs-collapse-open:hidden"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="3" x2="21" y1="6" y2="6"></line>
-            <line x1="3" x2="21" y1="12" y2="12"></line>
-            <line x1="3" x2="21" y1="18" y2="18"></line>
-          </svg>
-          <svg
-            class="hidden h-[3em] w-[3rem] flex-shrink-0 hs-collapse-open:block"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M18 6 6 18"></path>
-            <path d="m6 6 12 12"></path>
-          </svg>
-        </button>
-      </div>
-      <!-- ThemeIcon component specifically for smaller screens -->
-      <!-- <span class="inline-block md:hidden">
-        <ThemeIcon />
-      </span> -->
+      <HamburgerBtn />
     </div>
-    <!-- Contains navigation links -->
     <div
       id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block drop-shadow-navbar"
+      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-500 md:block drop-shadow-navbar"
     >
       <!-- Navigation links container -->
-      <div
-        class="mt-5 flex flex-col items-center gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 lg:gap-x-7 md:gap-y-0 md:ps-7"
-      >
+      <div class="mt-5 flex flex-col items-center gap-x-0 gap-y-4">
         <!-- Navigation links and Authentication component -->
-        {strings.navBarLinks.map(link => (
-          <NavLink url={link.url} name={link.name} />
-        ))}
-
-        <!-- ThemeIcon component specifically for larger screens -->
-        <span class="hidden md:inline-block">
-          <ThemeIcon />
-        </span>
+        {
+          navigationData.map((link: navBarLinks) => (
+            <NavigationLinks
+              url={link.url}
+              name={link.name}
+              fontColor={"text-green-500"}
+            />
+          ))
+        }
       </div>
     </div>
   </nav>
 </header>
-<!-- Theme Appearance script to manage light/dark modes -->
-<script is:inline>
-  const HSThemeAppearance = {
-    init() {
-      const defaultTheme = "default";
-      let theme = localStorage.getItem("hs_theme") || defaultTheme;
-
-      if (document.querySelector("html").classList.contains("dark")) return;
-      this.setAppearance(theme);
-    },
-    _resetStylesOnLoad() {
-      const $resetStyles = document.createElement("style");
-      $resetStyles.innerText = `*{transition: unset !important;}`;
-      $resetStyles.setAttribute("data-hs-appearance-onload-styles", "");
-      document.head.appendChild($resetStyles);
-      return $resetStyles;
-    },
-    setAppearance(theme, saveInStore = true, dispatchEvent = true) {
-      const $resetStylesEl = this._resetStylesOnLoad();
-
-      if (saveInStore) {
-        localStorage.setItem("hs_theme", theme);
-      }
-
-      if (theme === "auto") {
-        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "default";
-      }
-
-      document.querySelector("html").classList.remove("dark");
-      document.querySelector("html").classList.remove("default");
-      document.querySelector("html").classList.remove("auto");
-
-      document
-        .querySelector("html")
-        .classList.add(this.getOriginalAppearance());
-
-      setTimeout(() => {
-        $resetStylesEl.remove();
-      });
-
-      if (dispatchEvent) {
-        window.dispatchEvent(
-          new CustomEvent("on-hs-appearance-change", { detail: theme }),
-        );
-      }
-    },
-    getAppearance() {
-      let theme = this.getOriginalAppearance();
-      if (theme === "auto") {
-        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "default";
-      }
-      return theme;
-    },
-    getOriginalAppearance() {
-      const defaultTheme = "default";
-      return localStorage.getItem("hs_theme") || defaultTheme;
-    },
-  };
-  HSThemeAppearance.init();
-
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", () => {
-      if (HSThemeAppearance.getOriginalAppearance() === "auto") {
-        HSThemeAppearance.setAppearance("auto", false);
-      }
-    });
-
-  window.addEventListener("load", () => {
-    const $clickableThemes = document.querySelectorAll(
-      "[data-hs-theme-click-value]",
-    );
-    const $switchableThemes = document.querySelectorAll(
-      "[data-hs-theme-switch]",
-    );
-
-    $clickableThemes.forEach(($item) => {
-      $item.addEventListener("click", () =>
-        HSThemeAppearance.setAppearance(
-          $item.getAttribute("data-hs-theme-click-value"),
-          true,
-          $item,
-        ),
-      );
-    });
-
-    $switchableThemes.forEach(($item) => {
-      $item.addEventListener("change", (e) => {
-        HSThemeAppearance.setAppearance(e.target.checked ? "dark" : "default");
-      });
-
-      $item.checked = HSThemeAppearance.getAppearance() === "dark";
-    });
-
-    window.addEventListener("on-hs-appearance-change", (e) => {
-      $switchableThemes.forEach(($item) => {
-        $item.checked = e.detail === "dark";
-      });
-    });
-  });
-</script>
-<!--Import the necessary Collapse and Overlay plugins-->
-<!--https://preline.co/plugins/html/collapse.html-->
-<!--https://preline.co/plugins/html/overlay.html-->
 <script>
   import "@preline/collapse/index.js";
   import "@preline/overlay/index.js";

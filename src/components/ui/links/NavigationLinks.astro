@@ -1,0 +1,20 @@
+---
+// Destructure the properties from Astro.props
+const { url, name, fontColor } = Astro.props;
+
+// Define TypeScript interface for the properties
+interface Props {
+  url: string;
+  name: string;
+  fontColor: string;
+}
+---
+
+<a
+  id={url === "/" ? "home" : url.replace("/", "")}
+  href={url}
+  data-astro-prefetch
+  class=`rounded-lg text-base font-medium leading-4 outline-none ${fontColor}`
+>
+  {name}
+</a>
