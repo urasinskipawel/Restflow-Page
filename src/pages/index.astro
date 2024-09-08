@@ -3,7 +3,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import AboutSection from "@/components/sections/landing/AboutSection.astro";
-import FeaturesSection from "@/components/sections/features/FeaturesSection.astro";
+import FeaturesNavs from "@/components/sections/features/FeaturesNavs.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import heroImage from "@images/restflow-hero.png";
 import pricing from "@data/pricing.json";
@@ -12,6 +12,8 @@ import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
 import ContactSection from "@/components/sections/landing/ContactSection.astro";
 import ClientsSection from "@/components/sections/landing/ClientsSection.astro";
+import FeaturesGeneral from "@/components/sections/features/FeaturesGeneral.astro";
+import features from "@data/features.json";
 ---
 
 <MainLayout>
@@ -32,7 +34,11 @@ import ClientsSection from "@/components/sections/landing/ClientsSection.astro";
     title="Zaufali nam liderzy branży"
     subTitle="Poczuj niezawodność, którą wybierają giganci."
   />
-  <FeaturesSection
+  <FeaturesGeneral
+    title="Aplikacja która spełnia wymagania branży"
+    features={features}
+  />
+  <!-- <FeaturesNavs
     title=`Funkcje RestFlow`
     tabs={[
       {
@@ -62,7 +68,7 @@ import ClientsSection from "@/components/sections/landing/ClientsSection.astro";
         alt: "Gray metal building frame near tower crane during daytime",
       },
     ]}
-  />
+  /> -->
   <AboutSection
     title="Chcesz aby Restflow pomogło też twojej restauracji?"
     subTitle="Aplikacja RestFlow dostępna dla Ciebie już za 299 zł miesięcznie. Niewielki koszt wielkiej inwestycji! Skontaktuj się z nami już dziś, aby dowiedzieć się więcej i zacznij optymalizować pracę razem z Restflow! Po zamówieniu konsultacji skontaktuje się z Państwem przedstawiciel Restflow, który zaprezentuje pełne działanie aplikacji oraz ofertę."
@@ -70,10 +76,10 @@ import ClientsSection from "@/components/sections/landing/ClientsSection.astro";
     primaryBtn="Zamawiam konsultację"
     primaryBtnURL="/products"
   />
+  <PricingSection pricing={pricing} />
   <ContactSection
     titleSmall="Nie podjąłeś jeszcze decyzji?"
     titleBig="Po prostu skontaktuj się z nami"
     subTitle="Jeśli posiadasz dodatkowe pytania lub chcesz rozwiać swoje wątpliwości skontaktuj się z nami, a z chęcią pomożemy."
   />
-  <PricingSection pricing={pricing} />
 </MainLayout>

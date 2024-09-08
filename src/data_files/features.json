@@ -1,22 +1,17 @@
 [
   {
-    "heading": "Dedicated Teams",
-    "content": "Benefit from our committed teams who ensure your success is personal. Count on expert guidance and exceptional results throughout your project journey.",
-    "svg": "groups"
+    "heading": "Baza Dostawców",
+    "content": "Ułatw sobie kontakt z dostawcami i zarządzaj zamówieniami w jednym miejscu. Wszystkie oferty od twoich ulubionych dostawców będziesz mieć w jednym urządzeniu. Nie pominiesz najlepszych produktów w najniższych cenach!",
+    "svg": "suppliers"
   },
   {
-    "heading": "Simplicity and Affordability",
-    "content": "Find easy-to-use, affordable solutions with ScrewFast's line of tools and equipment. Our products make procurement simple and keep projects within budget.",
-    "svg": "verified"
+    "heading": "Zarządzanie Zapasami",
+    "content": "Utrzymuj optymalny poziom zapasów dzięki przejrzystym listom produktów. Aplikacja podpowie kiedy należy złożyć zamówienie aby nie przegapić godziny i nie stracić możliwości złożenia zamówienia u Twojego dostawcy.",
+    "svg": "inventory"
   },
   {
-    "heading": "Comprehensive Documentation",
-    "content": "Integrate with ease using ScrewFast's exhaustive guides and libraries. Achieve seamless product adoption with our full suite of documentation designed for your success.",
-    "svg": "books"
-  },
-  {
-    "heading": "User-Centric Design",
-    "content": "Experience the difference with ScrewFast's user-focused design — where functionality meets practicality for an enhanced work experience.",
-    "svg": "frame"
+    "heading": "Obsługa Zamówień",
+    "content": "Składaj zamówienia bezpośrednio przez aplikację, oszczędzając czas i redukując błędy. Dzięki inteligentnej zamawiarce w łatwy i szybki sposób wybierzesz najpotrzebniejsze dla Ciebie produkty. Wystarczy kilka kliknięć aby stworzyć pełna listę zamówień.",
+    "svg": "orders"
   }
 ]
