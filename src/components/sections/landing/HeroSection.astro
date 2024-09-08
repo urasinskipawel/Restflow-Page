@@ -6,11 +6,12 @@ import BrandLogoHero from "@/components/BrandLogoHero.astro";
 import BottomArrow from "@/components/BottomArrow.astro";
 
 // Define props from Astro
-const { title, primaryBtn, primaryBtnURL, src, alt } = Astro.props;
+const { title, subtitle, primaryBtn, primaryBtnURL, src, alt } = Astro.props;
 
 // Define TypeScript interface for props
 interface Props {
   title: string;
+  subtitle: string;
   primaryBtn?: string;
   primaryBtnURL?: string;
   src?: any;
@@ -31,11 +32,9 @@ interface Props {
     </div>
     <BrandLogoHero />
     <div class="px-6 mt-6">
-      <ul class="list-disc px-2 text-white text-xl">
-        <li>Kontroluj swoje zaopatrzenie</li>
-        <li>Oszczędzaj czas, pieniądze i nerwy</li>
-        <li>Nigdy nie przegap najniższych cen u swoich dostawców</li>
-      </ul>
+      <p class="list-disc px-2 text-white text-xl">
+        {subtitle}
+      </p>
     </div>
     <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
     <div class="my-11 flex justify-center border-none">
