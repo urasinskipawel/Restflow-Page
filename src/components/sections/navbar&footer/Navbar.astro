@@ -16,14 +16,11 @@ interface navBarLinks {
   class="sticky inset-x-0 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
 >
   <!-- Navigation container -->
-  <nav
-    class="relative w-full px-4 py-2 bg-green-50 drop-shadow-navbar md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
-    aria-label="Global"
-  >
-    <div class="flex items-center justify-around">
+  <nav class="relative w-full bg-green-50" aria-label="Global">
+    <div class="flex items-center justify-around px-4 py-2 shadow-lg">
       <!-- Brand logo -->
       <a
-        class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+        class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500"
         href={"/"}
         aria-label="Brand"
       >
@@ -34,10 +31,10 @@ interface navBarLinks {
     </div>
     <div
       id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-500 md:block drop-shadow-navbar"
+      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-500 md:block"
     >
       <!-- Navigation links container -->
-      <div class="mt-5 flex flex-col items-center gap-x-0 gap-y-4">
+      <div class="my-5 flex flex-col items-center gap-x-0 gap-y-4">
         <!-- Navigation links and Authentication component -->
         {
           navigationData.map((link: navBarLinks) => (
