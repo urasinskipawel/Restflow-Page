@@ -112,7 +112,7 @@ export const Icons = {
         d: "M10 18a8 8 0 100-16 8 8 0 000 16zM13.707 8.293a1 1 0 00-1.414-1.414L9 10.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z",
       },
     ],
-    class: "h-5 w-5 shrink-0",
+    class: "h-6 w-6 shrink-0",
     viewBox: "0 0 20 20",
     fill: "currentColor",
     fillRule: "evenodd",

@@ -18,9 +18,10 @@ export default {
       green: {
         50: "#EEF2F1",
         100: "#6D9773",
-        400: '#0C3B2ED9',
+        200: "#6D9773",
+        300: "#638A69",
+        400: "#0C3B2ED9",
         500: "#0C3B2E",
-        
       }, // restflow
       yellow: {
         50: "#fefce8",
@@ -52,8 +53,8 @@ export default {
         oswald: ["Oswald", "sans-serif"],
       },
       backgroundImage: {
-        'hero-pattern': "url('./src/images/background.svg')",
-      }
+        "hero-pattern": "url('./src/images/background.svg')",
+      },
     },
   },
   plugins: [
