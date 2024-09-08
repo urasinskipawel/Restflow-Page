@@ -9,7 +9,7 @@ const { titleSmall, titleBig, subTitle } = Astro.props;
 ---
 
 <!-- Contact Us -->
-<section class="w-full flex justify-center gap-4 px-3 pt-8 pb-4 bg-green-50">
+<section class="w-full flex justify-center gap-4 px-3 pt-8 pb-4">
   <div class="flex flex-col justify-center items-center text-green-500">
     <h2 class="font-oswald text-3xl leading-8">
       {titleSmall}
@@ -17,10 +17,10 @@ const { titleSmall, titleBig, subTitle } = Astro.props;
     <h1 class="font-oswald mt-10 mb-4 text-4xl leading-10">
       {titleBig}
     </h1>
-    <p class="font-inder text-xs text-black leading-6 pr-6">
+    <p class="font-inder text-sm text-black leading-6 pr-6">
       {subTitle}
     </p>
-    <div class="w-full items-center ">
+    <div class="w-full items-center mt-4">
       <SecondaryCTA title={"+48 123 122 12 12"} url={"/"}>
         <PhoneIcon />
       </SecondaryCTA>
