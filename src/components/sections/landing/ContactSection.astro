@@ -2,7 +2,7 @@
 // Import the necessary dependencies.
 import MailIcon from "@/components/MailIcon.astro";
 import PhoneIcon from "@/components/PhoneIcon.astro";
-import SecondaryCTA from "@/components/ui/buttons/SecondaryCTA.astro";
+import ContactButton from "@/components/ui/buttons/ContactButton.astro";
 // Define the variables that will be used in this component
 
 const { id, titleSmall, titleBig, subTitle } = Astro.props;
@@ -21,12 +21,18 @@ const { id, titleSmall, titleBig, subTitle } = Astro.props;
       {subTitle}
     </p>
     <div class="w-full items-center mt-4">
-      <SecondaryCTA title={"+48 123 122 12 12"} url={"/"}>
+      <ContactButton
+        title={"tel:+48 123 122 12 12"}
+        url={"tel:+48 123 122 12 12"}
+      >
         <PhoneIcon />
-      </SecondaryCTA>
-      <SecondaryCTA title={"kontakt@restflow.com"} url={"/"}>
+      </ContactButton>
+      <ContactButton
+        title={"kontakt@restflow.com"}
+        url={"mailto:kontakt@restflow.com"}
+      >
         <MailIcon />
-      </SecondaryCTA>
+      </ContactButton>
     </div>
   </div>
 </section>
