@@ -7,9 +7,6 @@ import FeaturesNavs from "@/components/sections/features/FeaturesNavs.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import heroImage from "@images/restflow-hero.png";
 import pricing from "@data/pricing.json";
-import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import dashboard from "@images/dashboard-image.avif";
 import ContactSection from "@/components/sections/landing/ContactSection.astro";
 import ClientsSection from "@/components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@/components/sections/features/FeaturesGeneral.astro";
@@ -26,15 +23,18 @@ import features from "@data/features.json";
     alt="Wyposarz swoją restaurację w RestFlow"
   />
   <AboutSection
+    id="about"
     title="Dla kogo zostało stworzone restflow?"
     subTitle="Restflow to idealne narzędzie dla właścicieli restauracji, szefów kuchni, menedżerów i zespołów zarządzających, którzy szukają nowoczesnego i efektywnego sposobu na zarządzanie codziennymi obowiązkami."
     subTitleStyle=`pr-6 text-xl`
   />
   <ClientsSection
+    id="clients"
     title="Zaufali nam liderzy branży"
     subTitle="Poczuj niezawodność, którą wybierają giganci."
   />
   <FeaturesGeneral
+    id="features"
     title="Aplikacja która spełnia wymagania branży"
     features={features}
   />
@@ -76,8 +76,9 @@ import features from "@data/features.json";
     primaryBtn="Zamawiam konsultację"
     primaryBtnURL="/products"
   /> -->
-  <PricingSection pricing={pricing} />
+  <PricingSection id="pricing" pricing={pricing} />
   <ContactSection
+    id="contact"
     titleSmall="Nie podjąłeś jeszcze decyzji?"
     titleBig="Po prostu skontaktuj się z nami"
     subTitle="Jeśli posiadasz dodatkowe pytania lub chcesz rozwiać swoje wątpliwości skontaktuj się z nami, a z chęcią pomożemy."

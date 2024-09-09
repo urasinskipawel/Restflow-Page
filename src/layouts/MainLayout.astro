@@ -27,10 +27,16 @@ We set the language of the page to English and add classes for scrollbar and scr
     <Meta meta={meta} structuredData={structuredData} />
     <!-- Define the title of the page -->
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inder&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inder&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
     <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
@@ -47,9 +53,7 @@ We set the language of the page to English and add classes for scrollbar and scr
       import "@scripts/lenisSmoothScroll.js";
     </script>
   </head>
-  <body
-    class="font-inder font-normal text-grayText-100"
-  >
+  <body class="font-inder font-normal text-grayText-100">
     <!--
     Setting up the main structure of the page.
     The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
@@ -61,10 +65,16 @@ We set the language of the page to English and add classes for scrollbar and scr
       </main>
     </div>
     <FooterSection />
-    <style>
+    <style is: global>
+      html {
+        scroll-behavior: smooth;
+      }
       /* CSS rules for the page scrollbar */
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
+      }
+      section {
+        scroll-margin-top: -65px;
       }
 
       .scrollbar-hide {

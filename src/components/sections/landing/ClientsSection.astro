@@ -4,18 +4,20 @@ import craftBurger from "@images//clients/craft-burger.png";
 import neighboursKitchen from "@images/clients/neighbours-kitchen.png";
 
 // Define props from Astro
-const { title, subTitle } = Astro.props;
+const { id, title, subTitle } = Astro.props;
 // src\components\sections\landing\ClientsSection.astro
 // src\images\clients\craft-burgers.png
 
 // Define TypeScript interface for props
 interface Props {
+  id: string;
   title: string;
   subTitle: string;
 }
 ---
 
 <section
+  id={id}
   class="w-full flex flex-col justify-center gap-4 px-3 py-8 bg-green-50"
 >
   <!-- Title and description -->

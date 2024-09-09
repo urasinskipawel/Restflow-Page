@@ -12,9 +12,7 @@ interface navBarLinks {
 ---
 
 <!-- Main header component -->
-<header
-  class="sticky inset-x-0 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
->
+<header class="z-50 flex w-full flex-wrap text-sm">
   <!-- Navigation container -->
   <nav class="relative w-full bg-green-50" aria-label="Global">
     <div class="flex items-center justify-around px-4 py-2 shadow-lg">
@@ -26,7 +24,6 @@ interface navBarLinks {
       >
         <NavLogo />
       </a>
-      <!-- Collapse toggle for smaller screens -->
       <HamburgerBtn />
     </div>
     <div

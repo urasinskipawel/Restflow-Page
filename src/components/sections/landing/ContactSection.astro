@@ -5,11 +5,11 @@ import PhoneIcon from "@/components/PhoneIcon.astro";
 import SecondaryCTA from "@/components/ui/buttons/SecondaryCTA.astro";
 // Define the variables that will be used in this component
 
-const { titleSmall, titleBig, subTitle } = Astro.props;
+const { id, titleSmall, titleBig, subTitle } = Astro.props;
 ---
 
 <!-- Contact Us -->
-<section class="w-full flex justify-center gap-4 px-3 pt-8 pb-4">
+<section id={id} class="w-full flex justify-center gap-4 px-3 pt-8 pb-4">
   <div class="flex flex-col justify-center items-center text-green-500">
     <h2 class="font-oswald text-3xl leading-8">
       {titleSmall}

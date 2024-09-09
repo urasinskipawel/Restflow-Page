@@ -10,14 +10,16 @@ interface Feature {
 }
 
 interface Props {
+  id: string;
   title?: string;
   features?: Feature[];
 }
 // Define props from Astro
-const { title, features } = Astro.props;
+const { id, title, features } = Astro.props;
 ---
 
 <section
+  id={id}
   class="w-full flex flex-col justify-center items-center gap-4 px-3 pt-8 pb-4 bg-grayText text-green-500"
 >
   <div class="flex justify-center items-center">

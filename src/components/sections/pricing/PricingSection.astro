@@ -5,7 +5,7 @@ import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define props from Astro
-const { pricing } = Astro.props;
+const { id,pricing } = Astro.props;
 
 // Define TypeScript type for products.
 type Product = {
@@ -34,7 +34,7 @@ interface PricingSectionProps {
 }
 ---
 
-<section class="mx-auto max-w-[85rem] px-4 py-10 bg-green-50">
+<section id={id} class="mx-auto max-w-[85rem] px-4 py-10 bg-green-50">
   <!-- Section heading and sub-heading -->
   <div class="mx-auto max-w-2xl mb-6 text-center text-green-500">
     <h2 class="text-balance text-4xl font-oswald tracking-tight">

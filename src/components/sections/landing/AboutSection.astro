@@ -2,11 +2,12 @@
 import PrimaryCTA from "@/components/ui/buttons/PrimaryCTA.astro";
 
 // Define props from Astro
-const { title, subTitle, subTitleStyle, primaryBtn, primaryBtnURL } =
+const { id, title, subTitle, subTitleStyle, primaryBtn, primaryBtnURL } =
   Astro.props;
 
 // Define TypeScript interface for props
 interface Props {
+  id?: string;
   title: string;
   subTitle: string;
   subTitleStyle: string;
@@ -15,7 +16,10 @@ interface Props {
 }
 ---
 
-<section class="w-full flex justify-center gap-4 px-3 py-8 bg-green-500">
+<section
+  id={id}
+  class="w-full flex justify-center gap-4 px-3 py-8 bg-green-500"
+>
   <!-- Title and description -->
   <div class="flex flex-col">
     <h1 class="flex pr-6 font-oswald text-4xl">
