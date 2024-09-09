@@ -1,12 +1,12 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "ScrewFast",
-  tagline: "Top-quality Hardware Tools",
-  description: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.",
-  description_short: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
-  url: "https://screwfast.uk",
-  author: "Emil Gulamov",
+  title: "RestFlow",
+  tagline: "Zrewolucjonizuj zarządzanie swoją restauracją z Restflow",
+  description: "Restflow to idealne narzędzie dla właścicieli restauracji, szefów kuchni, menedżerów i zespołów zarządzających, którzy szukają nowoczesnego i efektywnego sposobu na zarządzanie codziennymi obowiązkami.",
+  description_short: "Restflow to idealne narzędzie do nowoczesnego i efektywnego sposobu na zarządzanie codziennymi obowiązkami.",
+  url: "",
+  author: "Paweł Urasiński",
 };
 
 export const SEO = {
@@ -34,6 +34,6 @@ export const OG = {
   type: "website",
   url: SITE.url,
   title: `${SITE.title}: : Hardware Tools & Construction Services`,
-  description: "Equip your projects with ScrewFast's top-quality hardware tools and expert construction services. Trusted by industry leaders, ScrewFast offers simplicity, affordability, and reliability. Experience the difference with user-centric design and cutting-edge tools. Start exploring now!",
+  description: "Kontroluj swoje zaopatrzenie, oszczędzaj czas, pieniądze i nerwy oraz nigdy nie przegap najniższych cen u swoich dostawców - to wszystko oraz więcej zaoferuje Ci RestFlow!",
   image: ogImageSrc,
 };
