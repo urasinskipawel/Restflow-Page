@@ -5,6 +5,8 @@ import { navigationData } from "@utils/navigation.ts";
 import NavLogo from "@/components/NavLogo.astro";
 import HamburgerBtn from "@/components/ui/buttons/HamburgerBtn.astro";
 
+const currentUrl = new URL(Astro.request.url).pathname;
+
 interface navBarLinks {
   name: string;
   url: string;
@@ -15,7 +17,9 @@ interface navBarLinks {
 <header class="z-50 flex w-full flex-wrap text-sm">
   <!-- Navigation container -->
   <nav class="relative w-full bg-green-50" aria-label="Global">
-    <div class="flex items-center justify-around px-4 py-2 shadow-lg">
+    <div
+      class=`flex items-center ${currentUrl ? 'justify-start' : 'justify-around'}  px-4 py-2 shadow-lg`
+    >
       <!-- Brand logo -->
       <a
         class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500"
@@ -24,7 +28,7 @@ interface navBarLinks {
       >
         <NavLogo />
       </a>
-      <HamburgerBtn />
+      {currentUrl !== "/" ? null : <HamburgerBtn />}
     </div>
     <div
       id="navbar-collapse-with-animation"

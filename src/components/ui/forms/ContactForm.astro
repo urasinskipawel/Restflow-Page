@@ -1,0 +1,79 @@
+---
+// Import the necessary dependencies.
+import TextInput from "@components/ui/forms/input/TextInput.astro";
+import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astro";
+import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
+import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
+import Checkbox from "@components/ui/forms/input/Checkbox.astro";
+// Define the variables that will be used in this component
+
+const { formTitle } = Astro.props;
+
+interface Props {
+  formTitle: string;
+}
+---
+
+<div class="pt-9">
+  <h2
+    class="flex text-balance font-oswald text-3xl text-green-500 font-bold pb-6"
+  >
+    {formTitle}
+  </h2>
+
+  <form>
+    <div class="flex flex-col gap-5">
+      <TextInput
+        id="hs-firstname-contacts"
+        label="Nazwa restauracji"
+        name="hs-firstname-contacts"
+      />
+      <TextInput
+        id="hs-lastname-contacts"
+        label="Miejscowość"
+        name="hs-firstname-contacts"
+      />
+      <TextInput
+        id="hs-lastname-contacts"
+        label="Imię i nazwisko"
+        name="hs-firstname-contacts"
+      />
+      <EmailContactInput id="hs-email-contacts" label="Adres e-mail" />
+      <PhoneInput id="hs-phone-number" label="Numer telefonu" />
+    </div>
+    <div>
+      <Checkbox
+        label="Zapoznałem się i zgadzam się z treścią polityki prywatności."
+      />
+    </div>
+
+    <div class="flex flex-row-reverse gap-4">
+      <button type="button" class="w-32 bg-green-500 text-white rounded">
+        Zamów
+      </button>
+      <button
+        type="button"
+        class="clear-btn w-32 bg-green-50 shadow-md text-green-500 p-2 rounded"
+      >
+        Wyczyść
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Funkcja resetująca formularz
+  function clearForm(event) {
+    event.preventDefault();
+
+    const form = document.querySelector("form");
+    if (form) {
+      form.reset();
+    }
+  }
+
+  const btn = document.querySelector(".clear-btn");
+  if (btn) {
+    btn.addEventListener("click", clearForm);
+  }
+</script>

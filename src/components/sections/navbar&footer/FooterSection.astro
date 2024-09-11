@@ -13,12 +13,18 @@ import FooterLogo from "@/components/FooterLogo.astro";
 
 <footer class="w-full flex flex-col bg-green-500 px-3 pt-3 pb-5">
   <div class="">
-    <FooterLogo /> 
+    <a
+      class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500"
+      href={"/"}
+      aria-label="Brand"
+    >
+      <FooterLogo />
+    </a>
     <div class="flex flex-col py-4 gap-7">
       {
         navigationData.map((link) => (
           <NavigationLinks
-            url={link.url}
+            url={`/${link.url}`}
             name={link.name}
             fontColor={"text-grayText"}
           />
