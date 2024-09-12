@@ -2,7 +2,6 @@
 // Import section components
 import MainLayout from "@/layouts/MainLayout.astro";
 import ProductTabBtn from "@components/ui/buttons/ProductTabBtn.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
@@ -101,12 +100,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
               >
                 {product.data.longDescription.subTitle}
               </p>
-              <p class="mt-5">
-                <PrimaryCTA
-                  title={product.data.longDescription.btnTitle}
-                  url={product.data.longDescription.btnURL}
-                />
-              </p>
+            
             </div>
 
             <div class="space-y-6 lg:space-y-10">

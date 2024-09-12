@@ -1,7 +1,6 @@
 ---
 // Import SecondaryCTA component for use in this module
 import OrderPlanBtn from "@/components/ui/buttons/OrderPlanBtn.astro";
-import SecondaryCTA from "@/components/ui/buttons/ContactButton.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define props from Astro
@@ -19,19 +18,19 @@ type Product = {
   purchaseLink: string;
 };
 
-interface PricingSectionProps {
-  title: string;
-  subTitle: string;
-  badge: string;
-  thirdOption: string;
-  btnText: string;
-  pricing: {
-    title: string;
-    subTitle: string;
-    starterKit: Product;
-    professionalToolbox: Product;
-  };
-}
+// interface PricingSectionProps {
+//   title: string;
+//   subTitle: string;
+//   badge: string;
+//   thirdOption: string;
+//   btnText: string;
+//   pricing: {
+//     title: string;
+//     subTitle: string;
+//     starterKit: Product;
+//     professionalToolbox: Product;
+//   };
+// }
 ---
 
 <section id={id} class="mx-auto max-w-[85rem] px-4 py-10 bg-green-50">
