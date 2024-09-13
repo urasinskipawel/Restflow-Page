@@ -5,6 +5,7 @@ import { EmailContactInput } from "@components/ui/forms/input/EmailContactInput"
 import { PhoneInput } from "@components/ui/forms/input/PhoneInput";
 import { Checkbox } from "@components/ui/forms/input/Checkbox";
 import { FormProgression } from "./FormProgression";
+import { InfoIcon } from "@/components/InfoIcon";
 
 interface ContactFormInputs {
   restaurantName: string;
@@ -12,7 +13,7 @@ interface ContactFormInputs {
   fullName: string;
   email: string;
   phone: string;
-  privacyPolicy: boolean;
+  privacyPolicy?: boolean;
 }
 
 export const ContactForm = () => {
@@ -22,6 +23,7 @@ export const ContactForm = () => {
     reset,
     control,
     formState: { errors },
+    watch,
   } = useForm<ContactFormInputs>();
 
   const onSubmit = (data) => {
@@ -32,6 +34,14 @@ export const ContactForm = () => {
   const handleClear = () => {
     reset();
   };
+  const watchFields = watch([
+    "restaurantName",
+    "city",
+    "fullName",
+    "email",
+    "phone",
+  ]);
+  const filteredFields = watchFields.every((str) => str !== "" && str);
 
   return (
     <>
@@ -166,7 +176,7 @@ export const ContactForm = () => {
                     <Checkbox
                       {...field}
                       label="Zapoznałem się i zgadzam się z treścią polityki prywatności."
-                      id='checkbox-id'
+                      id="checkbox-id"
                     />
                     {errors.privacyPolicy && (
                       <span className="text-red-500">
@@ -176,6 +186,14 @@ export const ContactForm = () => {
                   </>
                 )}
               />
+              {filteredFields && (
+                <div className="my-4 flex items-center rounded-sm border-2 border-green-200 bg-grayText-100 px-2 py-1">
+                  <InfoIcon />
+                  <p className="ml-2 text-xs text-green-500">
+                    Czy sprawdziłeś wszystko?
+                  </p>
+                </div>
+              )}
             </div>
             <div className="flex flex-row-reverse gap-4">
               <button
