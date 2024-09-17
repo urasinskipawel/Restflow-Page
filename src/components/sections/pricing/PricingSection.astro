@@ -4,7 +4,7 @@ import OrderPlanBtn from "@/components/ui/buttons/OrderPlanBtn.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define props from Astro
-const { id,pricing } = Astro.props;
+const { id, pricing } = Astro.props;
 
 // Define TypeScript type for products.
 type Product = {
@@ -33,7 +33,7 @@ type Product = {
 // }
 ---
 
-<section id={id} class="mx-auto max-w-[85rem] px-4 py-10 bg-green-50">
+<section id={id} class="mx-auto px-4 py-10 bg-green-50">
   <!-- Section heading and sub-heading -->
   <div class="mx-auto max-w-2xl mb-6 text-center text-green-500">
     <h2 class="text-balance text-4xl font-oswald tracking-tight">
@@ -44,10 +44,12 @@ type Product = {
     </p>
   </div>
   <!-- Contains two main product blocks -->
-  <div class="flex flex-wrap items-center justify-center gap-4">
+  <div
+    class="flex flex-col items-center gap-4 sm:flex-row sm:items-stretch md:gap-10 lg:w-[80%] lg:mx-auto"
+  >
     <!-- Starter Kit product details -->
     <div
-      class="w-full rounded-xl bg-gradient-to-r from-green-300 to-green-200 p-6 text-white"
+      class="w-full rounded-xl bg-gradient-to-r from-green-300 to-green-200 p-6 text-white sm:flex sm:flex-col sm:justify-start"
     >
       <div class="mb-4">
         <h3 class="text-2xl font-bold text-white">
@@ -73,6 +75,7 @@ type Product = {
         }
       </ul>
       <!-- CTA for purchasing the product -->
+
       <OrderPlanBtn
         title={pricing.starterKit.purchaseBtnTitle}
         url={pricing.starterKit.purchaseLink}
@@ -82,9 +85,7 @@ type Product = {
     <div
       class="w-full rounded-xl bg-gradient-to-r from-green-400 to-green-300 text-white p-6 shadow-xl"
     >
-      <div
-        class="mb-4 flex flex-col items-start justify-between gap-4 text-white"
-      >
+      <div class="flex flex-col items-start justify-between gap-4 text-white">
         <div class="mb-4">
           <h3 class="text-2xl font-bold text-white">
             {pricing.professionalToolbox.name}
@@ -95,7 +96,7 @@ type Product = {
         </div>
 
         <span
-          class="order-first inline-block rounded-full bg-green-50 px-3 py-1 text-sm uppercase font-bold text-[#FFA500] lg:order-none"
+          class="order-first inline-block rounded-full bg-green-50 px-3 py-1 text-sm uppercase font-bold text-[#FFA500]"
           >{pricing.badge}</span
         >
       </div>
