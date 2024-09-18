@@ -24,40 +24,53 @@ interface Props {
   class="relative z-50 w-full flex justify-center gap-4 px-3 pt-14 pb-6 bg-hero-pattern bg-cover bg-center"
 >
   <!-- Title and description -->
-  <div>
+  <div class="flex flex-col items-center">
     <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
-    <div class="flex justify-center">
+    <div class="flex flex-col justify-center items-center w-full">
       <h1 class="flex text-balance font-oswald text-4xl">
         <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
         <Fragment set:html={title} />
       </h1>
+      <div class="md:self-end lg:scale-150 lg:mb-8 lg:mt-4 lg:mr-48">
+        <BrandLogoHero />
+      </div>
     </div>
-    <BrandLogoHero />
-    <div class="px-6 mt-6">
-      <p class="list-disc px-2 text-white text-xl">
-        {subtitle}
-      </p>
-    </div>
-    <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
-    <div class="my-11 flex justify-center border-none">
-      <ConsultationBtn title={"Zamawiam konsultację"} url={"/consultation"} />
-    </div>
-    <!-- Hero Image Section -->
-    <div class="flex w-full mb-8">
-      {
-        alt && src && (
-          <Image
-            src={src}
-            alt={alt}
-            class="h-full w-full scale-100 object-cover object-center"
-            draggable={"false"}
-            loading={"eager"}
-            format={"png"}
+    <div
+      class="md:flex md:flex-row md:gap-10 md:justify-between lg:justify-around"
+    >
+      <div class="md:flex md:flex-col lg:w-[35%]">
+        <div class="px-6 mt-6 md:mt-0">
+          <p class="text-center px-2 text-white text-xl">
+            {subtitle}
+          </p>
+        </div>
+        <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
+        <div class="my-11 w-full flex justify-center border-none">
+          <ConsultationBtn
+            title={"Zamawiam konsultację"}
+            url={"/consultation"}
           />
-        )
-      }
+        </div>
+      </div>
+      <!-- Hero Image Section -->
+      <div class="flex w-full mb-8 md:w-[80%] lg:w-[50%]">
+        {
+          alt && src && (
+            <Image
+              src={src}
+              alt={alt}
+              class="h-full w-full scale-100 object-cover object-center"
+              draggable={"false"}
+              loading={"eager"}
+              format={"png"}
+            />
+          )
+        }
+      </div>
     </div>
-    <p class="flex justify-center">Zjedź w dół, żeby dowiedzieć się więcej</p>
+    <p class="flex justify-center lg:mt-6">
+      Zjedź w dół, żeby dowiedzieć się więcej
+    </p>
     <div class="flex justify-center mt-2">
       <BottomArrow />
     </div>

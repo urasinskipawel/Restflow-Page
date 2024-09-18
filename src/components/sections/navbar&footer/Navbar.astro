@@ -16,7 +16,7 @@ interface navBarLinks {
 <!-- Main header component -->
 <header class="z-50 flex w-full flex-wrap text-sm">
   <!-- Navigation container -->
-  <nav class="relative w-full bg-green-50" aria-label="Global">
+  <nav class="relative w-full bg-green-50" aria-label="Global justify-center">
     <div
       class=`flex items-center ${currentUrl ? 'justify-start' : 'justify-around'}  px-4 py-2 shadow-lg`
     >
@@ -32,11 +32,13 @@ interface navBarLinks {
     </div>
     <div
       id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-500 md:block"
+      class="hs-collapse hidden transition-all ease-linear duration-500 lg:flex"
     >
       <!-- Navigation links container -->
-      <div class="my-5 flex flex-col items-center gap-x-0 gap-y-4">
-        <!-- Navigation links and Authentication component -->
+      <div
+        class="my-5 flex flex-col items-center gap-x-0 gap-y-4 lg:absolute lg:top-2 lg:left-60 lg:flex-row lg:gap-x-3 lg:my-0"
+      >
+        <!-- Navigation links  -->
         {
           navigationData.map((link: navBarLinks) => (
             <NavigationLinks
