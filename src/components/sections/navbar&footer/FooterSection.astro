@@ -12,7 +12,7 @@ import FooterLogo from "@/components/FooterLogo.astro";
 ---
 
 <footer class="w-full flex flex-col bg-green-500 px-3 pt-3 pb-5">
-  <div class="">
+  <div class="lg:flex lg:flex-row">
     <a
       class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500"
       href={"/"}
@@ -20,7 +20,7 @@ import FooterLogo from "@/components/FooterLogo.astro";
     >
       <FooterLogo />
     </a>
-    <div class="flex flex-col py-4 gap-7">
+    <div class="flex flex-col py-4 gap-7 pl-2 lg:pl-8 lg:flex-row">
       {
         navigationData.map((link) => (
           <NavigationLinks
@@ -33,24 +33,22 @@ import FooterLogo from "@/components/FooterLogo.astro";
     </div>
   </div>
 
-  <div class="flex justify-between self-center">
+  <div class="flex justify-between self-center md:gap-6 lg:gap-10 lg:mt-10">
     <!-- Social Brands -->
-    <div>
-      <FooterSocialLink url={socialLinks.facebook}
-        ><Icon name="facebookFooter" />
-      </FooterSocialLink>
-      <FooterSocialLink url={socialLinks.x}
-        ><Icon name="xFooter" /></FooterSocialLink
-      >
-      <FooterSocialLink url={socialLinks.github}
-        ><Icon name="githubFooter" />
-      </FooterSocialLink>
-      <FooterSocialLink url={socialLinks.google}
-        ><Icon name="googleFooter" />
-      </FooterSocialLink>
-      <FooterSocialLink url={socialLinks.slack}
-        ><Icon name="slackFooter" />
-      </FooterSocialLink>
-    </div>
+    <FooterSocialLink url={socialLinks.facebook}
+      ><Icon name="facebookFooter" />
+    </FooterSocialLink>
+    <FooterSocialLink url={socialLinks.x}
+      ><Icon name="xFooter" /></FooterSocialLink
+    >
+    <FooterSocialLink url={socialLinks.github}
+      ><Icon name="githubFooter" />
+    </FooterSocialLink>
+    <FooterSocialLink url={socialLinks.google}
+      ><Icon name="googleFooter" />
+    </FooterSocialLink>
+    <FooterSocialLink url={socialLinks.slack}
+      ><Icon name="slackFooter" />
+    </FooterSocialLink>
   </div>
 </footer>
