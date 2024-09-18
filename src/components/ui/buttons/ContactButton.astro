@@ -1,5 +1,4 @@
 ---
-
 // Destructure the properties from Astro.props
 const { title, url } = Astro.props;
 
@@ -12,11 +11,10 @@ interface Props {
 ---
 
 <!-- Styled hyperlink -->
-<div
+<a
+  href={url}
   class="flex items-center justify-center gap-8 w-full rounded-md py-5 my-2 text-green-500 transition duration-300 border-transparent bg-grayText-100"
 >
   <slot />
-  <a href={url}>
-    {title}
-  </a>
-</div>
+  {title}
+</a>
