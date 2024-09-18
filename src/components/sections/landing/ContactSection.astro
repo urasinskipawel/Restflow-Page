@@ -9,7 +9,10 @@ const { id, titleSmall, titleBig, subTitle } = Astro.props;
 ---
 
 <!-- Contact Us -->
-<section id={id} class="w-full flex justify-center gap-4 px-3 pt-8 pb-4">
+<section
+  id={id}
+  class="w-full flex flex-col justify-center items-center gap-4 px-3 pt-8 pb-4"
+>
   <div class="flex flex-col justify-center items-center text-green-500">
     <h2 class="font-oswald text-3xl leading-8">
       {titleSmall}
@@ -17,22 +20,22 @@ const { id, titleSmall, titleBig, subTitle } = Astro.props;
     <h1 class="font-oswald mt-10 mb-4 text-4xl leading-10">
       {titleBig}
     </h1>
-    <p class="font-inder text-sm text-black leading-6 pr-6">
+    <p class="font-inder text-sm text-black leading-6 pr-6 sm:pr-0">
       {subTitle}
     </p>
-    <div class="w-full items-center mt-4">
-      <ContactButton
-        title={"tel:+48 123 122 12 12"}
-        url={"tel:+48 123 122 12 12"}
-      >
-        <PhoneIcon />
-      </ContactButton>
-      <ContactButton
-        title={"kontakt@restflow.com"}
-        url={"mailto:kontakt@restflow.com"}
-      >
-        <MailIcon />
-      </ContactButton>
-    </div>
+  </div>
+  <div class="w-full mt-4 sm:flex sm:gap-8 lg:max-w-[75%]">
+    <ContactButton
+      title={"tel:+48 123 122 12 12"}
+      url={"tel:+48 123 122 12 12"}
+    >
+      <PhoneIcon />
+    </ContactButton>
+    <ContactButton
+      title={"kontakt@restflow.com"}
+      url={"mailto:kontakt@restflow.com"}
+    >
+      <MailIcon />
+    </ContactButton>
   </div>
 </section>
