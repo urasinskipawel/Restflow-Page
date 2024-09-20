@@ -11,7 +11,7 @@ export const Checkbox = ({ id, label, onChange, onBlur }: CheckboxProps) => (
       <input
         id={id}
         type="checkbox"
-        className="h-4 w-4 appearance-none rounded-sm border-2 border-green-400 text-green-500 checked:border-green-500 checked:bg-green-500 focus:ring-0"
+        className="h-4 w-4 cursor-pointer appearance-none rounded-sm border-2 border-green-400 text-green-500 checked:border-green-500 checked:bg-green-500 focus:ring-0"
         onChange={onChange}
         onBlur={onBlur}
       />

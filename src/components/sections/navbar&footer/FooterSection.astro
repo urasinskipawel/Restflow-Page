@@ -26,9 +26,9 @@ import FooterLogo from "@/components/FooterLogo.astro";
       {
         navigationData.map((link) => (
           <NavigationLinks
-            url={`/${link.url}`}
+            url={link.url}
             name={link.name}
-            fontColor={"text-grayText"}
+            fontColor={"text-white"}
           />
         ))
       }

@@ -198,13 +198,13 @@ export const ContactForm = () => {
             <div className="flex flex-row-reverse gap-4">
               <button
                 type="submit"
-                className="w-32 rounded bg-green-500 text-white"
+                className="w-32 rounded bg-green-500 text-white hover:bg-green-400"
               >
                 Zamów
               </button>
               <button
                 type="reset"
-                className="clear-btn w-32 rounded bg-green-50 p-2 text-green-500 shadow-md"
+                className="clear-btn w-32 rounded bg-green-50 p-2 text-green-500 shadow-md hover:bg-grayText-100"
                 onClick={handleClear}
               >
                 Wyczyść
