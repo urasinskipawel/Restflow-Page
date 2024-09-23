@@ -61,7 +61,11 @@ export const ContactForm = () => {
                   rules={{ required: "To pole jest wymagane" }}
                   render={({ field }) => (
                     <>
-                      <TextInput {...field} placeholder="Nazwa restauracji" />
+                      <TextInput
+                        {...field}
+                        placeholder="Nazwa restauracji"
+                        error={errors.restaurantName}
+                      />
                       {errors.restaurantName && (
                         <span className="text-red-500">
                           {errors.restaurantName.message}
@@ -79,7 +83,11 @@ export const ContactForm = () => {
                   rules={{ required: "To pole jest wymagane" }}
                   render={({ field }) => (
                     <>
-                      <TextInput {...field} placeholder="Miejscowość" />
+                      <TextInput
+                        {...field}
+                        placeholder="Miejscowość"
+                        error={errors.city}
+                      />
                       {errors.city && (
                         <span className="text-red-500">
                           {errors.city.message}
@@ -97,7 +105,11 @@ export const ContactForm = () => {
                   rules={{ required: "To pole jest wymagane" }}
                   render={({ field }) => (
                     <>
-                      <TextInput {...field} placeholder="Imię i nazwisko" />
+                      <TextInput
+                        {...field}
+                        placeholder="Imię i nazwisko"
+                        error={errors.fullName}
+                      />
                       {errors.fullName && (
                         <span className="text-red-500">
                           {errors.fullName.message}
@@ -124,6 +136,7 @@ export const ContactForm = () => {
                       <EmailContactInput
                         {...field}
                         placeholder="Adres e-mail"
+                        error={errors.email}
                       />
                       {errors.email && (
                         <span className="text-red-500">
@@ -148,7 +161,11 @@ export const ContactForm = () => {
                   }}
                   render={({ field }) => (
                     <>
-                      <PhoneInput {...field} placeholder="Numer telefonu" />
+                      <PhoneInput
+                        {...field}
+                        placeholder="Numer telefonu"
+                        error={errors.phone}
+                      />
                       {errors.phone && (
                         <span className="text-red-500">
                           {errors.phone.message}
