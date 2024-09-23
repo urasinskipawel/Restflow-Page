@@ -6,8 +6,8 @@ interface CheckboxProps {
 }
 
 export const Checkbox = ({ id, label, onChange, onBlur }: CheckboxProps) => (
-  <div className="flex items-center justify-center">
-    <div className="p-4">
+  <div className="flex items-center justify-center lg:justify-start">
+    <div className="p-3">
       <input
         id={id}
         type="checkbox"

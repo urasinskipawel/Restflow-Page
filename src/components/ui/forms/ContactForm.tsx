@@ -51,9 +51,9 @@ export const ContactForm = () => {
           {!isSubmitted ? "Dane kontaktowe" : "Dziękujemy"}
         </h2>
         {!isSubmitted && (
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-col gap-5">
-              <div>
+          <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex flex-col gap-5 lg:order-2 lg:max-w-xl lg:flex-row lg:flex-wrap">
+              <div className="lg:max-w-80 lg:flex-grow">
                 <Controller
                   name="restaurantName"
                   control={control}
@@ -75,7 +75,7 @@ export const ContactForm = () => {
                   )}
                 />
               </div>
-              <div>
+              <div className="lg:max-w-80 lg:flex-grow">
                 <Controller
                   name="city"
                   control={control}
@@ -97,7 +97,7 @@ export const ContactForm = () => {
                   )}
                 />
               </div>
-              <div>
+              <div className="lg:max-w-80 lg:flex-grow">
                 <Controller
                   name="fullName"
                   control={control}
@@ -119,7 +119,7 @@ export const ContactForm = () => {
                   )}
                 />
               </div>
-              <div>
+              <div className="lg:max-w-80 lg:flex-grow">
                 <Controller
                   name="email"
                   control={control}
@@ -147,7 +147,7 @@ export const ContactForm = () => {
                   )}
                 />
               </div>
-              <div>
+              <div className="lg:max-w-[278px] lg:flex-grow">
                 <Controller
                   name="phone"
                   control={control}
@@ -176,7 +176,7 @@ export const ContactForm = () => {
                 />
               </div>
             </div>
-            <div className="my-5">
+            <div className="mb-5 mt-3 lg:order-3">
               <Controller
                 name="privacyPolicy"
                 control={control}
@@ -203,16 +203,16 @@ export const ContactForm = () => {
                   </>
                 )}
               />
-              {filteredFields && (
-                <div className="my-4 flex items-center rounded-sm border-2 border-green-200 bg-grayText-100 px-2 py-1">
-                  <InfoIcon />
-                  <p className="ml-2 text-xs text-green-500">
-                    Czy sprawdziłeś wszystko?
-                  </p>
-                </div>
-              )}
             </div>
-            <div className="flex flex-row-reverse gap-4">
+            {filteredFields && (
+              <div className="my-4 flex items-center rounded-sm border-2 border-green-200 bg-grayText-100 px-2 py-1 lg:order-1">
+                <InfoIcon />
+                <p className="ml-2 text-xs text-green-500">
+                  Czy sprawdziłeś wszystko?
+                </p>
+              </div>
+            )}
+            <div className="flex flex-row-reverse gap-4 lg:order-4">
               <button
                 type="submit"
                 className="w-32 rounded bg-green-500 text-white hover:bg-green-400"
