@@ -5,32 +5,6 @@ import Icon from "@components/ui/icons/Icon.astro";
 
 // Define props from Astro
 const { id, pricing } = Astro.props;
-
-// Define TypeScript type for products.
-type Product = {
-  name: string;
-  description: string;
-  price: string;
-  cents: string;
-  billingFrequency: string;
-  features: Array<string>;
-  purchaseBtnTitle: string;
-  purchaseLink: string;
-};
-
-// interface PricingSectionProps {
-//   title: string;
-//   subTitle: string;
-//   badge: string;
-//   thirdOption: string;
-//   btnText: string;
-//   pricing: {
-//     title: string;
-//     subTitle: string;
-//     starterKit: Product;
-//     professionalToolbox: Product;
-//   };
-// }
 ---
 
 <section id={id} class="mx-auto px-4 py-10 bg-green-50">
@@ -45,11 +19,11 @@ type Product = {
   </div>
   <!-- Contains two main product blocks -->
   <div
-    class="flex flex-col items-center gap-4 sm:flex-row sm:items-stretch md:gap-10 lg:w-[80%] lg:mx-auto"
+    class="flex flex-col justify-center items-center gap-4 sm:flex-row sm:gap-0"
   >
     <!-- Starter Kit product details -->
     <div
-      class="w-full rounded-xl bg-gradient-to-r from-green-300 to-green-200 p-6 text-white sm:flex sm:flex-col sm:justify-start"
+      class="w-full rounded-xl bg-gradient-to-r from-green-300 to-green-200 p-6 text-white sm:max-w-md sm:rounded-r-none"
     >
       <div class="mb-4">
         <h3 class="text-2xl font-bold text-white">
@@ -83,7 +57,7 @@ type Product = {
     </div>
     <!-- Professional Toolbox product details -->
     <div
-      class="w-full rounded-xl bg-gradient-to-r from-green-400 to-green-300 text-white p-6 shadow-xl"
+      class="w-full rounded-xl bg-gradient-to-r from-green-400 to-green-300 text-white p-6 shadow-xl sm:max-w-md"
     >
       <div class="flex flex-col items-start justify-between gap-4 text-white">
         <div class="mb-4">
